@@ -4,7 +4,7 @@ import (
 	"io"
 )
 
-// CounterWriter implements io.Reader. Count of bytes written is tracked.
+// CounterWriter implements io.Writer. Count of bytes written is tracked.
 type CounterWriter struct {
 	writer io.Writer
 	count  int64

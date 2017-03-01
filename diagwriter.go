@@ -28,13 +28,13 @@ func NewDiagWriter(w io.Writer, diagOutput io.Writer) (dw *DiagWriter) {
 	}
 }
 
-// Enable or disable output of number of bytes written, stream position and
-// possible error code. The default is enabled.
+// PrintInfo enables or disables output of number of bytes written, stream
+// position and possible error code. The default is enabled.
 func (dw *DiagWriter) PrintInfo(v bool) {
 	dw.printInfo = v
 }
 
-// Enable or disable output of hex dump of the bytes written.
+// PrinteHex enables or disables hex dump output.
 // The default is enabled.
 func (dw *DiagWriter) PrintHex(v bool) {
 	dw.printHex = v

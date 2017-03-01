@@ -28,13 +28,13 @@ func NewDiagReader(r io.Reader, diagOutput io.Writer) (dr *DiagReader) {
 	}
 }
 
-// Enable or disable output of number of bytes read, stream position and
-// possible error code. The default is enabled.
+// PrintInfo enables or disables output of number of bytes read, stream
+// position and possible error code. The default is enabled.
 func (dr *DiagReader) PrintInfo(v bool) {
 	dr.printInfo = v
 }
 
-// Enable or disable output of hex dump of the bytes read.
+// PrinteHex enables or disables hex dump output.
 // The default is enabled.
 func (dr *DiagReader) PrintHex(v bool) {
 	dr.printHex = v

@@ -34,7 +34,7 @@ func (dw *DiagWriter) PrintInfo(v bool) {
 	dw.printInfo = v
 }
 
-// PrinteHex enables or disables hex dump output.
+// PrintHex enables or disables hex dump output.
 // The default is enabled.
 func (dw *DiagWriter) PrintHex(v bool) {
 	dw.printHex = v

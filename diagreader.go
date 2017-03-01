@@ -34,7 +34,7 @@ func (dr *DiagReader) PrintInfo(v bool) {
 	dr.printInfo = v
 }
 
-// PrinteHex enables or disables hex dump output.
+// PrintHex enables or disables hex dump output.
 // The default is enabled.
 func (dr *DiagReader) PrintHex(v bool) {
 	dr.printHex = v

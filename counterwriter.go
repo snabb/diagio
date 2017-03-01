@@ -10,6 +10,8 @@ type CounterWriter struct {
 	count  int64
 }
 
+var _ io.Writer = (*CounterWriter)(nil)
+
 // NewCounterWriter wraps io.Writer and returns CounterWriter.
 func NewCounterWriter(w io.Writer) (cw *CounterWriter) {
 	return &CounterWriter{

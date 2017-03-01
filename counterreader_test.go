@@ -8,7 +8,7 @@ import (
 	"io/ioutil"
 )
 
-func ExampleReader() {
+func ExampleCounterReader() {
 	input1 := bytes.NewBufferString("hello world")
 	input2 := diagio.NewCounterReader(input1)
 	io.Copy(ioutil.Discard, input2)

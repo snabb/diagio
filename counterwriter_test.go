@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-func ExampleWriter() {
+func ExampleCounterWriter() {
 	cw := diagio.NewCounterWriter(os.Stdout)
 	fmt.Fprintln(cw, "hello world")
 	fmt.Println(cw.Count())

@@ -3,7 +3,7 @@ diagio
 
 [![GoDoc](https://godoc.org/github.com/snabb/diagio?status.svg)](https://godoc.org/github.com/snabb/diagio)
 
-The Go package diagio implements I/O wrappers which can be usefull for
+The Go package diagio implements I/O wrappers which can be useful for
 debugging and other diagnostics purposes.
 
 CounterReader implements an io.Reader which keeps track of bytes read

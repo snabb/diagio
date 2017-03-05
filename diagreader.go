@@ -42,13 +42,17 @@ func (dr *DiagReader) PrintHex(v bool) {
 
 // Read calls Read on the wrapped io.Reader and produces diagnostics output.
 func (dr *DiagReader) Read(p []byte) (n int, err error) {
+	if dr.printInfo {
+		fmt.Fprintf(dr.diagOut, ">>> Read %d bytes at %d (start) ===\n", len(p), dr.pos)
+	}
+
 	n, err = dr.reader.Read(p)
 
-	if dr.printInfo {
-		fmt.Fprintf(dr.diagOut, "=== Read %d bytes at %d (err = %v) ===\n", n, dr.pos, err)
-	}
-	if dr.printHex {
+	if dr.printHex && n > 0 {
 		fmt.Fprint(dr.diagOut, hex.Dump(p[0:n]))
+	}
+	if dr.printInfo {
+		fmt.Fprintf(dr.diagOut, "<<< Read %d bytes (err = %v) (end) ===\n", n, err)
 	}
 	dr.pos = dr.pos + int64(n)
 

@@ -42,15 +42,19 @@ func (dw *DiagWriter) PrintHex(v bool) {
 
 // Write calls Write on the wrapped io.Writer and produces diagnostics output.
 func (dw *DiagWriter) Write(p []byte) (n int, err error) {
+	if dw.printInfo {
+		fmt.Fprintf(dw.diagOut, ">>> Write %d bytes at %d (start) ===\n", len(p), dw.pos)
+	}
+	if dw.printHex && len(p) > 0 {
+		fmt.Fprint(dw.diagOut, hex.Dump(p))
+	}
+
 	n, err = dw.writer.Write(p)
 
 	if dw.printInfo {
-		fmt.Fprintf(dw.diagOut, "=== Write %d bytes at %d (err = %v) ===\n", n, dw.pos, err)
+		fmt.Fprintf(dw.diagOut, "<<< Wrote %d bytes (err = %v) (end) ===\n", n, err)
 	}
-	if dw.printHex {
-		fmt.Fprint(dw.diagOut, hex.Dump(p[0:n]))
-	}
-
 	dw.pos = dw.pos + int64(n)
+
 	return n, err
 }

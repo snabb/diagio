@@ -2,14 +2,14 @@ package diagio_test
 
 import (
 	"fmt"
-	"io/ioutil"
+	"io"
 	"os"
 
 	"github.com/snabb/diagio"
 )
 
 func ExampleDiagWriter() {
-	output := diagio.NewDiagWriter(ioutil.Discard, os.Stdout)
+	output := diagio.NewDiagWriter(io.Discard, os.Stdout)
 	fmt.Fprint(output, "hello world")
 	// Output:
 	// >>> Write 11 bytes at 0 (start) ===

@@ -6,7 +6,7 @@ import (
 	"io"
 )
 
-// DiagWriter implements io.Writer. Diagnostics output is produced whenever
+// DiagWriter implements [io.Writer]. Diagnostics output is produced whenever
 // it is written to.
 type DiagWriter struct {
 	writer    io.Writer
@@ -18,7 +18,7 @@ type DiagWriter struct {
 
 var _ io.Writer = (*DiagWriter)(nil)
 
-// NewDiagWriter wraps io.Writer and returns DiagWriter.
+// NewDiagWriter wraps [io.Writer] and returns [DiagWriter].
 func NewDiagWriter(w io.Writer, diagOutput io.Writer) (dw *DiagWriter) {
 	return &DiagWriter{
 		writer:    w,
@@ -40,7 +40,7 @@ func (dw *DiagWriter) PrintHex(v bool) {
 	dw.printHex = v
 }
 
-// Write calls Write on the wrapped io.Writer and produces diagnostics output.
+// Write calls Write on the wrapped [io.Writer] and produces diagnostics output.
 func (dw *DiagWriter) Write(p []byte) (n int, err error) {
 	if dw.printInfo {
 		fmt.Fprintf(dw.diagOut, ">>> Write %d bytes at %d (start) ===\n", len(p), dw.pos)

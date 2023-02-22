@@ -6,7 +6,7 @@ import (
 	"io"
 )
 
-// DiagReader implements io.Reader. Diagnostics output is produced whenever
+// DiagReader implements [io.Reader]. Diagnostics output is produced whenever
 // it is read from.
 type DiagReader struct {
 	reader    io.Reader
@@ -18,7 +18,7 @@ type DiagReader struct {
 
 var _ io.Reader = (*DiagReader)(nil)
 
-// NewDiagReader wraps io.Reader and returns DiagReader.
+// NewDiagReader wraps [io.Reader] and returns [DiagReader].
 func NewDiagReader(r io.Reader, diagOutput io.Writer) (dr *DiagReader) {
 	return &DiagReader{
 		reader:    r,
@@ -40,7 +40,7 @@ func (dr *DiagReader) PrintHex(v bool) {
 	dr.printHex = v
 }
 
-// Read calls Read on the wrapped io.Reader and produces diagnostics output.
+// Read calls Read on the wrapped [io.Reader] and produces diagnostics output.
 func (dr *DiagReader) Read(p []byte) (n int, err error) {
 	if dr.printInfo {
 		fmt.Fprintf(dr.diagOut, ">>> Read %d bytes at %d (start) ===\n", len(p), dr.pos)

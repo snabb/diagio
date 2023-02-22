@@ -2,8 +2,9 @@ package diagio_test
 
 import (
 	"fmt"
-	"github.com/snabb/diagio"
 	"os"
+
+	"github.com/snabb/diagio"
 )
 
 func ExampleCounterWriter() {

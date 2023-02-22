@@ -2,10 +2,11 @@ package diagio_test
 
 import (
 	"bytes"
-	"github.com/snabb/diagio"
 	"io"
 	"io/ioutil"
 	"os"
+
+	"github.com/snabb/diagio"
 )
 
 func ExampleDiagReader() {

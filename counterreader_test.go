@@ -3,9 +3,10 @@ package diagio_test
 import (
 	"bytes"
 	"fmt"
-	"github.com/snabb/diagio"
 	"io"
 	"io/ioutil"
+
+	"github.com/snabb/diagio"
 )
 
 func ExampleCounterReader() {

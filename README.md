@@ -2,6 +2,7 @@ diagio
 ======
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/snabb/diagio.svg)](https://pkg.go.dev/github.com/snabb/diagio)
+[![Build Status](https://github.com/snabb/diagio/actions/workflows/go.yml/badge.svg)](https://github.com/snabb/diagio/actions/workflows/go.yml)
 [![Go Report Card](https://goreportcard.com/badge/github.com/snabb/diagio)](https://goreportcard.com/report/github.com/snabb/diagio)
 
 The Go package diagio implements I/O wrappers which can be useful for

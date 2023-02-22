@@ -4,7 +4,7 @@ import (
 	"io"
 )
 
-// CounterReader implements io.Reader. Count of bytes read is tracked.
+// CounterReader implements [io.Reader]. Number of bytes read is tracked.
 type CounterReader struct {
 	reader io.Reader
 	count  int64
@@ -12,14 +12,14 @@ type CounterReader struct {
 
 var _ io.Reader = (*CounterReader)(nil)
 
-// NewCounterReader wraps io.Reader and returns CounterReader
+// NewCounterReader wraps [io.Reader] and returns [CounterReader].
 func NewCounterReader(r io.Reader) (cr *CounterReader) {
 	return &CounterReader{
 		reader: r,
 	}
 }
 
-// Read calls Read on the wrapped io.Reader and adds the number of bytes
+// Read calls Read on the wrapped [io.Reader] and adds the number of bytes
 // read to the counter.
 func (cr *CounterReader) Read(p []byte) (n int, err error) {
 	n, err = cr.reader.Read(p)
@@ -27,7 +27,7 @@ func (cr *CounterReader) Read(p []byte) (n int, err error) {
 	return n, err
 }
 
-// Count returns the number of bytes read from the Reader.
+// Count returns the number of bytes read from the [CounterReader].
 func (cr *CounterReader) Count() (n int64) {
 	return cr.count
 }

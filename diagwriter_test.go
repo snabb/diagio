@@ -2,9 +2,10 @@ package diagio_test
 
 import (
 	"fmt"
-	"github.com/snabb/diagio"
 	"io/ioutil"
 	"os"
+
+	"github.com/snabb/diagio"
 )
 
 func ExampleDiagWriter() {

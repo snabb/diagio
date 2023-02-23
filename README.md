@@ -9,18 +9,18 @@ diagio
 The Go package diagio implements I/O wrappers which can be useful for
 debugging and other diagnostics purposes.
 
-CounterReader implements an io.Reader which keeps track of bytes read
-from it.
+`CounterReader` implements an `io.Reader` wrapper which keeps track of number
+of bytes read from it.
 
-CounterWriter implements an io.Writer which keeps track of bytes written
-to it.
+`CounterWriter` implements an `io.Writer` wrapper which keeps track of number
+of bytes written to it.
 
-DiagReader implements an io.Reader which produces diagnostics output
-(number of bytes, current position, error, hex dump of data) whenever
+`DiagReader` implements an `io.Reader` wrapper which produces diagnostics
+output (number of bytes, current position, error, hex dump of data) whenever
 it is read from.
 
-DiagWriter implements an io.Writer which produces diagnostics output
-(number of bytes, current position, error, hex dump of data) whenever
+`DiagWriter` implements an `io.Writer` wrapper which produces diagnostics
+output (number of bytes, current position, error, hex dump of data) whenever
 it is written to.
 
 Documentation:
